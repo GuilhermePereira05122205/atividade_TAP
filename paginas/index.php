@@ -24,7 +24,7 @@ $query->execute();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/index.css">
-    <title>Document</title>
+    <title>Index</title>
 </head>
 
 <body>
@@ -44,7 +44,7 @@ $query->execute();
             <?php foreach ($query->fetchAll(PDO::FETCH_BOTH) as $portfolio) { ?>
                 <aside class="portfolio">
                     <div class="nome">
-                        <img src="" alt="">
+                        <img src="<?php echo $portfolio["fotoPerfil"] ?>" alt="">
                         <div>
                             <p><?php echo $portfolio["nome"] ?></p>
                             <p><?php echo $portfolio["email"] ?></p>
@@ -56,13 +56,13 @@ $query->execute();
                     </div>
                     <div class="redes">
                         <div>
-                            <img src="./img/github.png" alt="">
+                            <a href="<?php echo $portfolio["github"] ?>"><img src="./img/github.png" alt=""></a>
                         </div>
                         <div>
-                            <img src="./img/edit.png" alt="">
+                        <a href="/consulta.php?id=<?php echo $portfolio["id"] ?>"> <img src="./img/edit.png" alt=""> </a>
                         </div>
                         <div>
-                            <img src="./img/linkedin.png" alt="">
+                            <a href="<?php echo $portfolio["linkedin"] ?>"><img src="./img/linkedin.png" alt=""></a>
                         </div>
                     </div>
 

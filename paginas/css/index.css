@@ -101,17 +101,22 @@ main{
     margin-bottom: 20px;
 }
 footer{
-    padding:30px;
+    
     width: 100%;
     background-color: #1697E9;
     color: white;
     text-align: center;
+    padding: 5px;
+    box-sizing: border-box;
+    
+    
 }
 
 @media (min-width: 768px){
     .grid{
         grid-template-columns: 1fr 1fr;
         max-width: 80%;
+        box-sizing: content-box;
     }
     
 }
