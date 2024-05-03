@@ -2,6 +2,10 @@
     margin: 0;
 }
 
+body {
+    font-family: Arial, sans-serif; /* Define a fonte para todo o documento */
+}
+
 .grid{
     display: grid;
     grid-template-columns: 1fr;
@@ -70,9 +74,12 @@
 }
 
 .portfolio img{
-    width: 70px;
-    height: 70px;
+    width: 90px;
+    height: 90px;
     margin-left: 10px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px;
 }
 
 .portfolio .redes{

@@ -46,12 +46,15 @@ $portifolio = $query->fetchObject();
         <nav>
             <ul>
                 <ul>
-                    <a href="/">
-                        <li>Listar Portifolio</li>
-                    </a>
-                    <a href="/cadastrarView.php">
-                        <li>Criar portifolio</li>
-                    </a>
+                <a href="/">
+                    <li>Home</li>
+                </a>
+                <a href="/cadastrarView.php">
+                    <li>Criar portifolio</li>
+                </a>
+                <a href="/listar.php">
+                    <li>Listar</li>
+                </a>
                 </ul>
             </ul>
         </nav>

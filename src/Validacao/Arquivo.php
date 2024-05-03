@@ -15,7 +15,7 @@ class Arquivo{
         }
 
         $tamanho = $_FILES["fotoPerfil"]["size"] / 1024 / 1024;
-
+        exit($tamanho);
         if($tamanho >= 2){
             http_response_code(400);
             exit("Foto muito grande");

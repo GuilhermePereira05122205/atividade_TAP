@@ -18,11 +18,15 @@
         <nav>
             <ul>
                 <a href="/">
-                    <li>Listar Portifolio</li>
+                    <li>Home</li>
                 </a>
                 <a href="/cadastrarView.php">
                     <li>Criar portifolio</li>
                 </a>
+                <a href="/listar.php">
+                    <li>Listar</li>
+                </a>
+                
             </ul>
         </nav>
     </header>
