@@ -9,7 +9,7 @@ $conexao = new Conexao();
 
 $conexao = $conexao->conectar();
 
-$query = $conexao->prepare("SELECT * FROM portifolios");
+$query = $conexao->prepare("CALL ListarPortfolios()");
 
 $query->execute();
 
@@ -31,8 +31,14 @@ $query->execute();
     <header class="header">
         <nav>
             <ul>
-                <li>Listar Portifolio</li>
-                <li>Criar portifolio</li>
+            <ul>
+                <a href="/">
+                    <li>Listar Portifolio</li>
+                </a>
+                <a href="/cadastrarView.php">
+                    <li>Criar portifolio</li>
+                </a>
+            </ul>
             </ul>
         </nav>
     </header>

@@ -28,21 +28,21 @@ $conexao = new Conexao();
 
 $conexao = $conexao->conectar();
 
-$query = $conexao->prepare("INSERT INTO portifolios(nome, email, descricao, linkedin, github, fotoPerfil, dataNascimento) VALUES(?, ?, ?, ?, ?, ?, ?)");
+$query = $conexao->prepare("CALL CadastrarPortfolio(:nome, :email, :dataNascimento, :github, :linkedin, :descricao, :fotoPerfil)");
 
-$query->bindValue(1, $_POST["nome"]);
+$query->bindValue("nome", $_POST["nome"]);
 
-$query->bindValue(2, $_POST["email"]);
+$query->bindValue("email", $_POST["email"]);
 
-$query->bindValue(3, $_POST["descricao"]);
+$query->bindValue("dataNascimento", $_POST["dataNascimento"]);
 
-$query->bindValue(4, $_POST["linkedin"]);
+$query->bindValue("github", $_POST["github"]);
 
-$query->bindValue(5, $_POST["github"]);
+$query->bindValue("linkedin", $_POST["linkedin"]);
 
-$query->bindValue(6, $caminho);
+$query->bindValue("descricao",  $_POST["descricao"]);
 
-$query->bindValue(7, $_POST['dataNascimento']);
+$query->bindValue("fotoPerfil", $caminho);
 
 $query->execute();
 

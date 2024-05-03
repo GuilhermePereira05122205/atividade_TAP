@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./css/insertInformacoes.css">
     <title>Inserir informacoes</title>
     <script src="./js/Imagem.js" type="module"></script>
-    <script src="./js/formulario.js"type="module"></script>
+    <script src="./js/formulario.js" type="module"></script>
 
 
 </head>
@@ -17,15 +17,19 @@
     <header class="header">
         <nav>
             <ul>
-                <li>Listar Portifolio</li>
-                <li>Criar portifolio</li>
+                <a href="/">
+                    <li>Listar Portifolio</li>
+                </a>
+                <a href="/cadastrarView.php">
+                    <li>Criar portifolio</li>
+                </a>
             </ul>
         </nav>
     </header>
     <main>
         <form action="/cadastrar.php" method="POST" enctype="multipart/form-data">
             <article>
-                <div class="container" id="form1" >
+                <div class="container" id="form1">
                     <h3>Insira as informações necessárias</h3>
 
                     <label class="campoLabel" for="nome">Nome</label><br>
@@ -70,7 +74,7 @@
         </form>
         </article>
     </main>
-    
+
     <footer>
         <h4>Portfolios</h4>
         <h4>Desenvolvido para a criação de portifólios rápidos e simples.</h4>

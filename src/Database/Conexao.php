@@ -15,7 +15,7 @@ class Conexao{
  
     public function __construct() {
         $this->host = 'localhost';
-        $this->db   = 'portfolios';
+        $this->db   = 'ProjetoTAP';
         $this->user = 'root';
         $this->pass = 'senha';
         $this->charset = 'utf8mb4';

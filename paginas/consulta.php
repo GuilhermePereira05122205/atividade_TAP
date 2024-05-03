@@ -19,9 +19,9 @@ $conexao = new Conexao();
 
 $conexao = $conexao->conectar();
 
-$query = $conexao->prepare("SELECT * FROM portifolios WHERE id = ?");
+$query = $conexao->prepare("CALL Portfolio(:id)");
 
-$query->bindValue(1, $_GET["id"]);
+$query->bindValue("id", $_GET["id"]);
 
 $query->execute();
 
@@ -37,7 +37,7 @@ $portifolio = $query->fetchObject();
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/stylecss.css">
     <script src="./js/editarCampos.js" type="module"></script>
-    
+
     <title>Document</title>
 </head>
 
@@ -45,8 +45,14 @@ $portifolio = $query->fetchObject();
     <header class="header">
         <nav>
             <ul>
-                <li>Listar Portifolio</li>
-                <li>Criar portifolio</li>
+                <ul>
+                    <a href="/">
+                        <li>Listar Portifolio</li>
+                    </a>
+                    <a href="/cadastrarView.php">
+                        <li>Criar portifolio</li>
+                    </a>
+                </ul>
             </ul>
         </nav>
 
@@ -60,38 +66,44 @@ $portifolio = $query->fetchObject();
                     <div>Nome <br>
                         <input type="text" name="nome" class="input" value="<?php echo $portifolio->nome ?>" disabled>
                     </div>
-                    <button class="botao editar" type="button" id="nome">Editar</button> <button  type="button" id="nome" class="botao excluir">Excluir</button>
+                    <button class="botao editar" type="button" id="nome">Editar</button> <button type="button" id="nome" class="botao excluir">Excluir</button>
 
                     <div>
                         E-mail <br>
                         <input type="text" name="email" class="input" value="<?php echo $portifolio->email ?>" disabled>
                     </div>
-                    <button class="botao editar" id="email"  type="button">Editar</button> <button class="botao excluir" id="email" type="button">Excluir</button>
-  
+                    <button class="botao editar" id="email" type="button">Editar</button> <button class="botao excluir" id="email" type="button">Excluir</button>
+
 
                     <div>Data de nascimento <br>
                         <input type="text" name="dataNascimento" class="input" value="<?php echo $portifolio->dataNascimento ?>" disabled>
                     </div>
-                    <button class="botao editar" id="dataNascimento"  type="button">Editar</button> <button class="botao excluir" id="dataNascimento" type="button">Excluir</button>
+                    <button class="botao editar" id="dataNascimento" type="button">Editar</button> <button class="botao excluir" id="dataNascimento" type="button">Excluir</button>
 
                     <div>
                         GitHub <br>
-                        <input type="text"  name="github" class="input" value="<?php echo $portifolio->github ?>" disabled>
+                        <input type="text" name="github" class="input" value="<?php echo $portifolio->github ?>" disabled>
                     </div>
-                    <button class="botao editar" id="github"  type="button">Editar</button> <button class="botao excluir"  id="github" type="button">Excluir</button>
+                    <button class="botao editar" id="github" type="button">Editar</button> <button class="botao excluir" id="github" type="button">Excluir</button>
 
                     <div>
                         Linkedin <br>
-                        <input type="text"  name="linkedin" class="input" value="<?php echo $portifolio->linkedin ?>" disabled>
+                        <input type="text" name="linkedin" class="input" value="<?php echo $portifolio->linkedin ?>" disabled>
                     </div>
-                    <button class="botao editar" id="linkedin"  type="button">Editar</button> <button class="botao excluir" id="linkedin"  type="button">Excluir</button>
+                    <button class="botao editar" id="linkedin" type="button">Editar</button> <button class="botao excluir" id="linkedin" type="button">Excluir</button>
 
+                    <div class="imagem">
+                        Foto <br>
+                        <img src="" alt="" id="foto">
+                        <input type="file" name="fotoPerfil" class="input" id="imagem">
+                        <label for="imagem">Atualizar Imagem</label>
+                    </div>
                     <div>
-                        <h4>Sobre você e seus projeto</h4> 
-                        <textarea name="descricao" class="input"disabled><?php echo $portifolio->descricao ?></textarea> 
+                        <h4>Sobre você e seus projeto</h4>
+                        <textarea name="descricao" class="input" disabled><?php echo $portifolio->descricao ?></textarea>
                     </div>
 
-                    <button class="botao editar" id="descricao"  type="button">Editar</button> <button class="botao excluir"  type="button" id="descricao">Excluir</button>
+                    <button class="botao editar" id="descricao" type="button">Editar</button> <button class="botao excluir" type="button" id="descricao">Excluir</button>
 
             </div>
 
@@ -110,11 +122,8 @@ $portifolio = $query->fetchObject();
 
     <script src="./js/Imagem.js"></script>
     <script>
-            carregarImagem("<?php echo $portifolio->fotoPerfil  ?>")
+        carregarImagem("<?php echo $portifolio->fotoPerfil  ?>")
 
-            document.getElementById("imagem").addEventListener("change", function(){
-                console.log(document.getElementById("imagem").files)
-            })
     </script>
 </body>
 

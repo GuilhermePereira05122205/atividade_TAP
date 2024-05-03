@@ -33,23 +33,23 @@ $conexao = new Conexao();
 
 $conexao = $conexao->conectar();
 
-$query = $conexao->prepare("UPDATE portifolios SET nome = ?, email = ?, linkedin = ?, github = ?, descricao = ?, fotoPerfil = ?, dataNascimento = ? WHERE id = ?");
+$query = $conexao->prepare("CALL AtualizarPortfolio(:nome, :email, :dataNascimento, :github, :linkedin, :descricao, :fotoPerfil, :id)");
 
-$query->bindValue(1, $_POST["nome"]);
+$query->bindValue("nome", $_POST["nome"]);
 
-$query->bindValue(2, $_POST["email"]);
+$query->bindValue("email", $_POST["email"]);
 
-$query->bindValue(3, $_POST["linkedin"]);
+$query->bindValue("dataNascimento", $_POST["dataNascimento"]);
 
-$query->bindValue(4, $_POST["github"]);
+$query->bindValue("github", $_POST["github"]);
 
-$query->bindValue(5, $_POST["descricao"]);
+$query->bindValue("linkedin", $_POST["linkedin"]);
 
-$query->bindValue(6, $caminho);
+$query->bindValue("descricao", $_POST["descricao"]);
 
-$query->bindValue(7, $_POST['dataNascimento']);
+$query->bindValue("fotoPerfil", $caminho);
 
-$query->bindValue(8, $_GET["id"]);
+$query->bindValue("id", $_GET["id"]);
 
 $query->execute();
 
