@@ -30,17 +30,17 @@
     <main>
     <section class="banner">
         <article>
-            <img src="./img/banner.png" alt="" class="banner">
+            <img src="./img/banner.jpeg" alt="" class="banner">
         </article>
     </section>
     <section class="portfoliosite">
         <article>
             <div class="imagem">
-                <img src="./img/imagem.png" alt="" >
+                <img src="./img/imagem.jpeg" alt="" >
             </div>
             <div>
                 <h2>Você já teve dificuldades em fazer um portfólio? Se esse era o seu maior problema temos a solução!</h2>
-                <img src="./img/nota.png" alt="" class="nota">
+                <img src="./img/nota.jpeg" alt="" class="nota">
             </div>
         </article>
     </section>
