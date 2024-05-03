@@ -38,7 +38,7 @@ $portifolio = $query->fetchObject();
     <link rel="stylesheet" href="./css/stylecss.css">
     <script src="./js/editarCampos.js" type="module"></script>
 
-    <title>Document</title>
+    <title>Atualizar</title>
 </head>
 
 <body>

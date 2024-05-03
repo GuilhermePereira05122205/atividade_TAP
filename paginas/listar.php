@@ -24,7 +24,7 @@ $query->execute();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/index.css">
-    <title>Index</title>
+    <title>Listar</title>
 </head>
 
 <body>
