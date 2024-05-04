@@ -1,0 +1,10 @@
+{
+    "name": "projeto/projeto",
+    "description": "Trabalho de TAP para criação de portifolis",
+    "autoload": {
+        "psr-4": {
+            "Projeto\\": "src/"
+        }
+    },
+    "require": {}
+}
